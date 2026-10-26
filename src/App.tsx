@@ -12,10 +12,14 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import RoleRoute from "./components/RoleRoute";
 import FindDoctors from "./pages/patient/FindDoctors";
 import PatientLayout from "./layouts/PatientLayout";
-import DoctorAvailability from "./pages/patient/DoctorAvailability";
+import DoctorsAvailability from "./pages/patient/DoctorAvailability";
 import MyAppointments from "./pages/patient/MyAppointments";
 import Prescriptions from "./pages/patient/Prescriptions";
 import Notifications from "./pages/patient/Notifications";
+import DoctorLayout from "./layouts/DoctorLayout";
+import DoctorAppointments from "./pages/doctor/DoctorAppointments";
+import DoctorAvailability from "./pages/doctor/DoctorsAvailability";
+
 
 function App() {
   return (
@@ -32,7 +36,7 @@ function App() {
             <Route element={<PatientLayout />} >
               <Route path="/patient/dashboard" element={<PatientDashboard />} />
               <Route path="/patient/doctors" element={<FindDoctors />} />
-              <Route path="/patient/doctors/:doctorId/availability" element={<DoctorAvailability />} />
+              <Route path="/patient/doctors/:doctorId/availability" element={<DoctorsAvailability />} />
               <Route path="/patient/appointments/" element={<MyAppointments />} />
               <Route path="/patient/prescriptions/" element={<Prescriptions />} />
               <Route path="/patient/notifications/" element={<Notifications />} />
@@ -40,7 +44,12 @@ function App() {
           </Route>
 
           <Route element={<RoleRoute allowedRole="doctor" />}>
-            <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+            <Route element={<DoctorLayout />} >
+              <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+              <Route path="/doctor/appointment" element={<DoctorAppointments />} />
+              <Route path="/doctor/notifications" element={<Notifications />} />
+              <Route path="/doctor/availability" element={<DoctorAvailability />} />
+            </Route>
           </Route>
 
           <Route element={<RoleRoute allowedRole="admin" />}>

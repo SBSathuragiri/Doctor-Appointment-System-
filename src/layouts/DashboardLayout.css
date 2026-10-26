@@ -6,7 +6,13 @@
 }
 
 .dashboard-sidebar {
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
     width: 240px;
+    height: 100vh;
     flex-shrink: 0;
     padding: 28px 18px;
     background: #ffffff;
@@ -28,6 +34,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .menu-link {
@@ -76,13 +85,19 @@
 }
 
 .sidebar-top {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
     width: 100%;
 }
 
 .sidebar-bottom {
     width: 100%;
+    flex-shrink: 0;
     margin-top: auto;
-    padding-top: 24px;
+    padding-top: 16px;
+    background: #ffffff;
 }
 
 .sidebar-logout {
@@ -168,28 +183,35 @@
 }
 
 
+
 @media (max-width: 640px) {
     .dashboard-layout {
         flex-direction: column;
     }
 
     .dashboard-sidebar {
-        width: auto;
+        position: static;
+        width: 100%;
+        height: auto;
+        min-height: auto;
         padding: 18px;
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
     }
 
+    .sidebar-top {
+        flex: initial;
+    }
+
     .dashboard-sidebar nav {
+        flex: initial;
+        overflow: visible;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .dashboard-header {
-        padding: 20px;
-    }
-
-    .dashboard-content {
-        padding: 20px;
+    .sidebar-bottom {
+        margin-top: 16px;
+        padding-top: 8px;
     }
 }
