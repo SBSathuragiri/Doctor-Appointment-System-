@@ -1,0 +1,362 @@
+.doctor-register-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+    background: #ffffff;
+    color: #172033;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.doctor-register-visual {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 38px clamp(24px, 4vw, 64px);
+    overflow: hidden;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 15% 80%, rgba(64, 190, 181, 0.24), transparent 35%),
+        linear-gradient(145deg, #123d59 0%, #126b78 55%, #138a91 100%);
+}
+
+.doctor-register-brand,
+.doctor-register-mobile-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    color: inherit;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.doctor-register-brand-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #137b83;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.doctor-register-visual-content {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.doctor-register-eyebrow,
+.doctor-register-step {
+    display: inline-block;
+    color: #b6f1e8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.doctor-register-visual-content h1 {
+    margin: 18px 0;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.doctor-register-visual-content>p {
+    max-width: 420px;
+    color: #d4e8ed;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.doctor-register-benefits {
+    display: grid;
+    gap: 24px;
+    margin-top: 42px;
+}
+
+.doctor-register-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.doctor-register-benefit>span {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    color: #b6f1e8;
+    font-weight: 800;
+}
+
+.doctor-register-benefit strong,
+.doctor-register-benefit small {
+    display: block;
+}
+
+.doctor-register-benefit strong {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.doctor-register-benefit small {
+    color: #d4e8ed;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.doctor-register-visual-footer {
+    color: #d4e8ed;
+    font-size: 12px;
+}
+
+.doctor-register-form-side {
+    min-width: 0;
+    padding: 48px clamp(24px, 5vw, 80px);
+}
+
+.doctor-register-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.doctor-register-mobile-brand {
+    display: none;
+    color: #123d59;
+    margin-bottom: 36px;
+}
+
+.doctor-register-mobile-brand .doctor-register-brand-icon {
+    background: #137b83;
+    color: #ffffff;
+}
+
+.doctor-register-form-heading {
+    margin-bottom: 32px;
+}
+
+.doctor-register-form-heading h2 {
+    margin: 12px 0 8px;
+    color: #172033;
+    font-size: clamp(26px, 3vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -1px;
+}
+
+.doctor-register-form-heading p,
+.doctor-register-section-description {
+    color: #687386;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.doctor-register-step {
+    color: #137b83;
+}
+
+.doctor-register-form {
+    display: grid;
+    gap: 17px;
+}
+
+.doctor-register-form h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #172033;
+}
+
+.doctor-register-section-description {
+    margin: -8px 0 0;
+}
+
+.doctor-register-field {
+    display: grid;
+    gap: 8px;
+}
+
+.doctor-register-field label {
+    color: #344054;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.doctor-register-field label span {
+    color: #dc4c4c;
+}
+
+.doctor-register-field input,
+.doctor-register-field select,
+.doctor-register-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d9e0e7;
+    border-radius: 9px;
+    background: #ffffff;
+    padding: 12px 13px;
+    color: #172033;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.doctor-register-field input:focus,
+.doctor-register-field select:focus,
+.doctor-register-field textarea:focus {
+    border-color: #16838b;
+    box-shadow: 0 0 0 3px rgba(22, 131, 139, 0.12);
+}
+
+.doctor-register-field input[type="file"] {
+    padding: 10px;
+    background: #f8fafb;
+}
+
+.doctor-register-field input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 11px;
+    border: 0;
+    border-radius: 6px;
+    background: #e0f2f1;
+    color: #126b70;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.doctor-register-field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.doctor-register-field small {
+    color: #7a8494;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.doctor-register-divider {
+    height: 1px;
+    margin: 8px 0;
+    background: #e8edf1;
+}
+
+.doctor-register-alert {
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.doctor-register-alert.error {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #b42318;
+}
+
+.doctor-register-alert.success {
+    border: 1px solid #a7e4c0;
+    background: #effcf4;
+    color: #166534;
+}
+
+.doctor-register-submit {
+    width: 100%;
+    border: 0;
+    border-radius: 9px;
+    background: #137b83;
+    color: #ffffff;
+    padding: 14px 18px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.doctor-register-submit:hover:not(:disabled) {
+    background: #105f68;
+    transform: translateY(-1px);
+}
+
+.doctor-register-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.doctor-register-login,
+.doctor-register-approval-note {
+    margin: 0;
+    text-align: center;
+    color: #687386;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.doctor-register-login a {
+    color: #137b83;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.doctor-register-login a:hover {
+    text-decoration: underline;
+}
+
+.doctor-register-approval-note {
+    padding: 12px;
+    border-radius: 8px;
+    background: #f3f8f8;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .doctor-register-page {
+        grid-template-columns: minmax(270px, 0.75fr) minmax(0, 1.25fr);
+    }
+
+    .doctor-register-visual {
+        padding: 30px 24px;
+    }
+
+    .doctor-register-form-side {
+        padding: 36px 24px;
+    }
+
+    .doctor-register-visual-content h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 680px) {
+    .doctor-register-page {
+        display: block;
+    }
+
+    .doctor-register-visual {
+        display: none;
+    }
+
+    .doctor-register-form-side {
+        padding: 28px 20px 40px;
+    }
+
+    .doctor-register-mobile-brand {
+        display: inline-flex;
+    }
+
+    .doctor-register-form-heading {
+        margin-bottom: 26px;
+    }
+}

@@ -19,6 +19,8 @@ import Notifications from "./pages/patient/Notifications";
 import DoctorLayout from "./layouts/DoctorLayout";
 import DoctorAppointments from "./pages/doctor/DoctorAppointments";
 import DoctorAvailability from "./pages/doctor/DoctorsAvailability";
+import DoctorRegister from "./pages/auth/DoctorRegister";
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/doctor-register" element={<DoctorRegister />} />
 
         <Route element={<ProtectedRoute />}>
 
