@@ -1,0 +1,135 @@
+.doctor-availability-page {
+    width: 100%;
+}
+
+.availability-heading {
+    margin-bottom: 28px;
+}
+
+.availability-heading h2 {
+    margin: 0 0 8px;
+    color: #111827;
+    font-size: 24px;
+}
+
+.availability-heading p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.availability-date {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 280px;
+    margin-bottom: 28px;
+}
+
+.availability-date label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.availability-date input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1f2937;
+    font: inherit;
+}
+
+.availability-date input:focus {
+    border-color: #2563eb;
+    outline: 2px solid #bfdbfe;
+}
+
+.availability-slot-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.availability-slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.availability-slot strong {
+    color: #111827;
+    font-size: 15px;
+}
+
+.slot-status {
+    margin: 8px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.slot-status.available {
+    color: #15803d;
+}
+
+.slot-status.booked {
+    color: #b91c1c;
+}
+
+.slot-status.unavailable {
+    color: #6b7280;
+}
+
+.availability-slot button {
+    flex-shrink: 0;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.availability-slot button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.availability-slot button:disabled {
+    background: #e5e7eb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.availability-error {
+    color: #b91c1c;
+}
+
+.booking-success {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    background: #f0fdf4;
+    color: #166534;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .availability-slot {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .availability-slot button {
+        width: 100%;
+    }
+}

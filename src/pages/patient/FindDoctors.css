@@ -1,0 +1,174 @@
+.doctor-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.doctor-list~* {
+    box-sizing: border-box;
+}
+
+.doctor-list .doctor-card {
+    min-width: 0;
+}
+
+.doctor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid #e2eaf4;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(30, 64, 110, 0.05);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    border-color: #b8d5fa;
+    box-shadow: 0 12px 28px rgba(30, 64, 110, 0.11);
+}
+
+.doctor-card h3 {
+    margin: 0 0 10px;
+    color: #183153;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.doctor-card p {
+    margin: 0 0 12px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.doctor-card p:nth-of-type(1) {
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.doctor-card p:nth-of-type(2) {
+    display: inline-block;
+    padding: 5px 12px;
+    color: #315b91;
+    background: #edf5ff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.doctor-card p:nth-of-type(3) {
+    margin-top: 6px;
+    margin-bottom: 20px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.doctor-card p:nth-of-type(4) {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 17px;
+    border-top: 1px solid #e8eef6;
+    color: #0f766e;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.doctor-card button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px 18px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.doctor-card button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+}
+
+.doctor-card button:active {
+    transform: scale(0.98);
+}
+
+.doctor-card button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+[role="alert"] {
+    padding: 14px 18px;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+    .doctor-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .doctor-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 650px) {
+    .doctor-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .doctor-card {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .doctor-card h3 {
+        font-size: 19px;
+    }
+
+    .doctor-card button {
+        padding: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .doctor-card,
+    .doctor-card button {
+        transition: none;
+    }
+
+    .doctor-card:hover,
+    .doctor-card button:active {
+        transform: none;
+    }
+}

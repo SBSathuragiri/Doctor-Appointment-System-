@@ -1,0 +1,437 @@
+.my-appointments-page {
+    min-height: 100vh;
+    padding: 32px;
+    background: #f7f9fc;
+    color: #1e293b;
+    box-sizing: border-box;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.my-appointments-page * {
+    box-sizing: border-box;
+}
+
+
+.my-appointments-header {
+    margin-bottom: 28px;
+}
+
+.my-appointments-header h2 {
+    margin: 0 0 8px;
+    color: #17345c;
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.my-appointments-header p {
+    margin: 0;
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.appointment-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding: 6px 0;
+}
+
+.appointment-filters button {
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-all {
+    color: #2563eb;
+    background: #eff6ff;
+    border-color: #bfdbfe !important;
+}
+
+.filter-booked {
+    color: #15803d;
+    background: #f0fdf4;
+    border-color: #bbf7d0 !important;
+}
+
+.filter-completed {
+    color: #7e22ce;
+    background: #faf5ff;
+    border-color: #e9d5ff !important;
+}
+
+.filter-cancelled {
+    color: #dc2626;
+    background: #fef2f2;
+    border-color: #fecaca !important;
+}
+
+.filter-all:hover {
+    background: #dbeafe;
+}
+
+.filter-booked:hover {
+    background: #dcfce7;
+}
+
+.filter-completed:hover {
+    background: #f3e8ff;
+}
+
+.filter-cancelled:hover {
+    background: #fee2e2;
+}
+
+.appointment-filters button.active {
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+}
+
+.filter-all.active {
+    background: #2563eb;
+    border-color: #2563eb !important;
+}
+
+.filter-booked.active {
+    background: #15803d;
+    border-color: #15803d !important;
+}
+
+.filter-completed.active {
+    background: #7e22ce;
+    border-color: #7e22ce !important;
+}
+
+.filter-cancelled.active {
+    background: #dc2626;
+    border-color: #dc2626 !important;
+}
+
+.appointments-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+
+.appointment-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5ebf3;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(30, 55, 90, 0.04);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-3px);
+    border-color: #c7daf8;
+    box-shadow: 0 10px 28px rgba(30, 55, 90, 0.09);
+}
+
+
+.appointment-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.appointment-card-header>div {
+    min-width: 0;
+}
+
+.appointment-card-header h3 {
+    margin: 0 0 7px;
+    color: #183153;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.appointment-card-header p {
+    margin: 0 0 8px;
+    color: #3972c6;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.appointment-card-header>div>span {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #526781;
+    background: #f0f4f9;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.appointment-status {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 750;
+    line-height: 1.4;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.status-booked {
+    color: #167345;
+    background: #e2f8eb;
+    border: 1px solid #c3efd4;
+}
+
+.status-completed {
+    color: #2456bd;
+    background: #e8f0ff;
+    border: 1px solid #cbdcff;
+}
+
+.status-cancelled {
+    color: #b42332;
+    background: #fff0f0;
+    border: 1px solid #ffd4d7;
+}
+
+
+.appointment-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 20px 16px;
+    padding: 22px 0;
+}
+
+.appointment-details>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    min-width: 0;
+}
+
+.detail-label {
+    color: #8290a4;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.appointment-details strong {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.appointment-details>div:last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px dashed #e5eaf1;
+}
+
+
+.appointment-fees {
+    margin-top: auto;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #edf1f6;
+    border-radius: 12px;
+}
+
+.appointment-fees>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 13px;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.appointment-fees>div>span:last-child {
+    color: #334155;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.appointment-fees .appointment-total {
+    margin: 4px 0 0;
+    padding-top: 15px;
+    border-top: 1px solid #dfe7f0;
+    color: #17345c;
+    font-size: 15px;
+}
+
+.appointment-fees .appointment-total strong:last-child {
+    color: #0f766e;
+    font-size: 19px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.appointments-message,
+.appointments-error {
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.appointments-message {
+    color: #2456bd;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.appointments-error {
+    color: #b42332;
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+}
+
+.appointments-empty {
+    padding: 56px 24px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 16px;
+}
+
+.appointments-empty h3 {
+    margin: 0 0 10px;
+    color: #183153;
+    font-size: 20px;
+}
+
+.appointments-empty p {
+    margin: 0;
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+    .my-appointments-page {
+        padding: 24px;
+    }
+
+    .appointments-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .appointment-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .my-appointments-page {
+        padding: 18px 14px;
+    }
+
+    .my-appointments-header {
+        margin-bottom: 22px;
+    }
+
+    .my-appointments-header h2 {
+        font-size: 25px;
+    }
+
+    .my-appointments-header p {
+        font-size: 14px;
+    }
+
+    .appointment-filters {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .appointment-filters button {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .appointment-card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .appointment-card-header {
+        gap: 10px;
+        padding-bottom: 16px;
+    }
+
+    .appointment-card-header h3 {
+        font-size: 17px;
+    }
+
+    .appointment-status {
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+
+    .appointment-details {
+        gap: 18px 12px;
+        padding: 18px 0;
+    }
+
+    .appointment-details strong {
+        font-size: 12px;
+    }
+
+    .detail-label {
+        font-size: 11px;
+    }
+
+    .appointment-fees {
+        padding: 15px;
+    }
+
+    .appointment-fees .appointment-total strong:last-child {
+        font-size: 17px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .appointment-card,
+    .appointment-filters button {
+        transition: none;
+    }
+
+    .appointment-card:hover {
+        transform: none;
+    }
+}
