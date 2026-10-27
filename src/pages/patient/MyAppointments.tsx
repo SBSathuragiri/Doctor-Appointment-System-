@@ -22,7 +22,7 @@ interface Appointment {
 
 export default function MyAppointments() {
 
-    type AppointmentFilter = "all" | "booked" | "completed" | "cancelled";
+    type AppointmentFilter = "all" | "confirmed" | "booked" | "completed" | "cancelled";
 
     const [filter, setFilter] = useState<AppointmentFilter>("all");
     const [appointments, setAppointments] = useState<Appointment[]>([]);
@@ -42,16 +42,12 @@ export default function MyAppointments() {
             });
     }, []);
 
-    const formatDate = (date: string) => {
+    function formatDate(date: string) {
         const dateOnly = date.slice(0, 10);
-        const [year, month, day] = dateOnly.split("-").map(Number);
+        const [year, month, day] = dateOnly.split("-");
 
-        return new Date(year, month - 1, day).toLocaleDateString("en-IN", {
-            day: "numeric",
-            month: "short",
-            year: "numeric",
-        });
-    };
+        return `${day}-${month}-${year}`;
+    }
 
     const formatTime = (time: string) => {
         return new Date(time).toLocaleTimeString("en-IN", {
@@ -72,7 +68,7 @@ export default function MyAppointments() {
             </div>
 
             <div className="appointment-filters">
-                {(["all", "booked", "completed", "cancelled"] as const).map(
+                {(["all", "confirmed", "booked", "completed", "cancelled"] as const).map(
                     (status) => (
                         <button
                             key={status}
