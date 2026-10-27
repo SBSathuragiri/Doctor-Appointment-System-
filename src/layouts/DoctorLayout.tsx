@@ -1,18 +1,18 @@
+
 import { Outlet } from "react-router-dom";
 import DashboardLayout from "./DashboardLayout";
 
-export default function AdminLayout() {
+export default function DoctorLayout() {
     const menuItems = [
-        { label: "Dashboard", path: "/admin/dashboard" },
-        { label: "Doctors", path: "/admin/doctors" },
-        { label: "Patients", path: "/admin/patients" },
-        { label: "Appointments", path: "/admin/appointments" },
-        { label: "Settings", path: "/admin/settings" },
+        { label: "Dashboard", path: "/doctor/dashboard" },
+        { label: "Availability", path: "/doctor/availability" },
+        { label: "Appointment", path: "/doctor/appointment" },
+        { label: "Notifications", path: "/doctor/notifications" },
     ];
 
     return (
         <DashboardLayout
-            title="Admin Dashboard"
+            title="Doctor Dashboard"
             menuItems={menuItems}
         >
             <Outlet />

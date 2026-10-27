@@ -66,7 +66,40 @@ export default function DoctorAppointments() {
             .finally(() => setLoading(false));
     }, []);
 
+    const handleConfirmAppointment = async (
+        appointmentId: string
+    ) => {
+        try {
+            setActionLoadingId(appointmentId);
+            setActionMessage("");
+            setActionError("");
 
+            await apiRequest(
+                `/appointments/${appointmentId}/confirm`,
+                {
+                    method: "PATCH",
+                }
+            );
+
+            setAppointments((previous) =>
+                previous.map((appointment) =>
+                    appointment.appointmentId === appointmentId
+                        ? { ...appointment, status: "confirmed" }
+                        : appointment
+                )
+            );
+
+            setActionMessage("Appointment confirmed successfully.");
+        } catch (error: unknown) {
+            setActionError(
+                error instanceof Error
+                    ? error.message
+                    : "Failed to confirm appointment."
+            );
+        } finally {
+            setActionLoadingId(null);
+        }
+    };
 
     const handleCancelAppointment = async (appointmentId: string) => {
         const confirmed = window.confirm(
@@ -251,22 +284,62 @@ export default function DoctorAppointments() {
                                     </td>
 
                                     <td>
-                                        {(["booked", "confirmed"].includes(
-                                            appointment.status.toLowerCase()
-                                        )) ? (
+                                        {appointment.status.toLowerCase() === "booked" && (
+                                            <>
+                                                <button
+                                                    type="button"
+                                                    className="confirm-appointment-btn"
+                                                    onClick={() =>
+                                                        handleConfirmAppointment(
+                                                            appointment.appointmentId
+                                                        )
+                                                    }
+                                                    disabled={
+                                                        actionLoadingId === appointment.appointmentId
+                                                    }
+                                                >
+                                                    {actionLoadingId === appointment.appointmentId
+                                                        ? "Confirming..."
+                                                        : "Confirm Appointment"}
+                                                </button>
+
+                                                <button
+                                                    type="button"
+                                                    className="cancel-appointment-btn"
+                                                    onClick={() =>
+                                                        handleCancelAppointment(
+                                                            appointment.appointmentId
+                                                        )
+                                                    }
+                                                    disabled={
+                                                        actionLoadingId === appointment.appointmentId
+                                                    }
+                                                >
+                                                    {actionLoadingId === appointment.appointmentId
+                                                        ? "Processing..."
+                                                        : "Cancel Appointment"}
+                                                </button>
+                                            </>
+                                        )}
+
+                                        {appointment.status.toLowerCase() === "confirmed" && (
                                             <>
                                                 <button
                                                     type="button"
                                                     className="complete-appointment-btn"
                                                     onClick={() => {
-                                                        setPrescriptionAppointmentId(appointment.appointmentId);
+                                                        setPrescriptionAppointmentId(
+                                                            appointment.appointmentId
+                                                        );
                                                         setDiagnosis("");
                                                         setMedicines("");
                                                         setInstructions("");
                                                         setActionMessage("");
                                                         setActionError("");
                                                     }}
-                                                    disabled={actionLoadingId === appointment.appointmentId}
+                                                    disabled={
+                                                        actionLoadingId === appointment.appointmentId
+                                                    }
                                                 >
                                                     Complete & Prescribe
                                                 </button>
@@ -275,19 +348,26 @@ export default function DoctorAppointments() {
                                                     type="button"
                                                     className="cancel-appointment-btn"
                                                     onClick={() =>
-                                                        handleCancelAppointment(appointment.appointmentId)
+                                                        handleCancelAppointment(
+                                                            appointment.appointmentId
+                                                        )
                                                     }
-                                                    disabled={actionLoadingId === appointment.appointmentId}
+                                                    disabled={
+                                                        actionLoadingId === appointment.appointmentId
+                                                    }
                                                 >
                                                     {actionLoadingId === appointment.appointmentId
                                                         ? "Processing..."
                                                         : "Cancel Appointment"}
                                                 </button>
-
                                             </>
-                                        ) : (
-                                            <span className="no-action-text">No action</span>
                                         )}
+
+                                        {!["booked", "confirmed"].includes(
+                                            appointment.status.toLowerCase()
+                                        ) && (
+                                                <span className="no-action-text">No action</span>
+                                            )}
                                     </td>
 
                                 </tr>

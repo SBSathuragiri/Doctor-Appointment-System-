@@ -265,6 +265,40 @@
     cursor: not-allowed;
 }
 
+.confirm-appointment-btn {
+    background-color: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 4px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.confirm-appointment-btn:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+}
+
+.confirm-appointment-btn:active {
+    transform: translateY(0);
+}
+
+.confirm-appointment-btn:disabled {
+    background-color: #86c99a;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+}
+
+.confirm-appointment-btn:focus-visible {
+    outline: 2px solid #16a34a;
+    outline-offset: 3px;
+}
+
 @media (max-width: 640px) {
     .appointments-heading {
         align-items: flex-start;
