@@ -9,11 +9,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
+    min-height: 100dvh;
     background: #fff;
     color: var(--register-navy);
     font-family: "DM Sans", sans-serif;
 }
 
+.cp-register-page *,
+.cp-register-page *::before,
+.cp-register-page *::after {
+    box-sizing: border-box;
+}
+
+/* VISUAL PANEL */
 
 .cp-register-visual {
     position: relative;
@@ -21,16 +29,12 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
-    padding: 48px clamp(32px, 6vw, 90px);
+    padding: clamp(24px, 5vh, 48px) clamp(32px, 6vw, 90px);
     background:
-        radial-gradient(circle at 85% 80%,
-            rgba(67, 196, 196, 0.18),
-            transparent 32%),
-        linear-gradient(145deg,
-            #effbfc 0%,
-            #e5f5fa 55%,
-            #d9f0f5 100%);
+        radial-gradient(circle at 85% 80%, rgba(67, 196, 196, 0.18), transparent 32%),
+        linear-gradient(145deg, #effbfc 0%, #e5f5fa 55%, #d9f0f5 100%);
 }
 
 .cp-register-visual::before {
@@ -55,7 +59,9 @@
     content: "";
 }
 
-.cp-register-brand {
+/* BRAND (matches .cp-brand markup in Register.tsx) */
+
+.cp-brand {
     position: relative;
     z-index: 1;
     display: inline-flex;
@@ -63,29 +69,43 @@
     align-self: flex-start;
     gap: 12px;
     color: var(--register-navy);
-    font-family: "Manrope", sans-serif;
-    font-size: 23px;
-    font-weight: 800;
-    letter-spacing: -0.8px;
     text-decoration: none;
 }
 
-.cp-register-brand strong {
-    color: #078caa;
-}
-
-.cp-register-brand-icon {
+.cp-brand-symbol {
     display: grid;
+    flex: 0 0 auto;
     width: 43px;
     height: 43px;
     place-items: center;
     border-radius: 14px;
     background: linear-gradient(145deg, #19b7a7, #0786b6);
     box-shadow: 0 8px 20px rgba(8, 127, 140, 0.18);
-    color: #fff;
-    font-size: 33px;
-    font-weight: 500;
+}
+
+.cp-brand-symbol svg {
+    display: block;
+}
+
+.cp-brand-name {
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
     line-height: 1;
+}
+
+.cp-brand-name strong {
+    color: #078caa;
+    font-weight: 800;
+}
+
+.cp-brand:focus-visible,
+.cp-register-login-prompt a:focus-visible,
+.cp-register-doctor-prompt a:focus-visible {
+    outline: 2px solid var(--register-primary);
+    outline-offset: 4px;
+    border-radius: 6px;
 }
 
 .cp-register-visual-content {
@@ -93,7 +113,7 @@
     z-index: 1;
     width: 100%;
     max-width: 530px;
-    margin: 65px 0;
+    margin: clamp(24px, 6vh, 65px) 0;
 }
 
 .cp-register-eyebrow {
@@ -127,8 +147,8 @@
 
 .cp-register-benefits {
     display: grid;
-    gap: 26px;
-    margin-top: 42px;
+    gap: clamp(16px, 2.6vh, 26px);
+    margin-top: clamp(24px, 4vh, 42px);
 }
 
 .cp-register-benefit {
@@ -186,7 +206,7 @@
     align-items: center;
     justify-content: center;
     min-width: 0;
-    padding: 48px clamp(28px, 6vw, 90px);
+    padding: clamp(20px, 4vh, 48px) clamp(28px, 6vw, 90px);
     background: #fff;
 }
 
@@ -195,16 +215,12 @@
     max-width: 440px;
 }
 
-.cp-register-mobile-brand {
-    display: none;
-}
-
 .cp-register-heading {
-    margin-bottom: 32px;
+    margin-bottom: clamp(18px, 3vh, 32px);
 }
 
 .cp-register-heading h2 {
-    margin: 14px 0 10px;
+    margin: clamp(8px, 1.4vh, 14px) 0 clamp(6px, 1vh, 10px);
     color: var(--register-navy);
     font-family: "Manrope", sans-serif;
     font-size: clamp(30px, 3vw, 40px);
@@ -219,10 +235,9 @@
     line-height: 1.8;
 }
 
-
 .cp-register-form {
     display: grid;
-    gap: 21px;
+    gap: clamp(14px, 2.2vh, 21px);
 }
 
 .cp-register-field {
@@ -239,7 +254,7 @@
 .cp-register-field input {
     box-sizing: border-box;
     width: 100%;
-    min-height: 52px;
+    min-height: clamp(44px, 5.6vh, 52px);
     padding: 0 16px;
     border: 1px solid #dbe4eb;
     border-radius: 11px;
@@ -248,9 +263,7 @@
     color: var(--register-navy);
     font-family: inherit;
     font-size: 14px;
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cp-register-field input::placeholder {
@@ -293,13 +306,14 @@
     color: #047857;
 }
 
+/* SUBMIT */
 
 .cp-register-submit {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    min-height: 54px;
+    min-height: clamp(46px, 5.8vh, 54px);
     margin-top: 3px;
     padding: 0 20px;
     border: none;
@@ -311,16 +325,18 @@
     font-family: inherit;
     font-size: 15px;
     font-weight: 700;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .cp-register-submit:hover:not(:disabled) {
     transform: translateY(-2px);
     background: linear-gradient(110deg, #066873, #087f8c);
     box-shadow: 0 12px 25px rgba(8, 127, 140, 0.23);
+}
+
+.cp-register-submit:focus-visible {
+    outline: 3px solid rgba(8, 127, 140, 0.35);
+    outline-offset: 3px;
 }
 
 .cp-register-submit:disabled {
@@ -332,12 +348,13 @@
     font-size: 21px;
 }
 
+/* DIVIDER + LINKS */
 
 .cp-register-divider {
     display: flex;
     align-items: center;
     gap: 13px;
-    margin: 28px 0;
+    margin: clamp(16px, 2.6vh, 28px) 0;
     color: #91a1b0;
     font-size: 9px;
     font-weight: 700;
@@ -382,30 +399,13 @@
 }
 
 .cp-register-footer {
-    margin: 34px 0 0;
+    margin: clamp(16px, 3vh, 34px) 0 0;
     color: #9aa7b4;
     font-size: 11px;
     text-align: center;
 }
 
-.cp-register-brand {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.cp-register-logo {
-    display: block;
-    width: 180px;
-    height: auto;
-}
-
-@media (max-width: 700px) {
-    .cp-register-logo {
-        width: 165px;
-    }
-}
-
+/* TABLET */
 
 @media (max-width: 1000px) {
     .cp-register-page {
@@ -420,13 +420,18 @@
         padding: 38px 32px;
     }
 
-    .cp-register-brand {
+    .cp-brand-name {
         font-size: 19px;
     }
 
-    .cp-register-brand-icon {
+    .cp-brand-symbol {
         width: 38px;
         height: 38px;
+    }
+
+    .cp-brand-symbol svg {
+        width: 28px;
+        height: 28px;
     }
 
     .cp-register-visual-content h1 {
@@ -439,6 +444,7 @@
     }
 }
 
+/* MOBILE: visual panel collapses to a brand-only header */
 
 @media (max-width: 700px) {
     .cp-register-page {
@@ -447,18 +453,25 @@
     }
 
     .cp-register-visual {
+        min-height: 0;
+        padding: 28px 23px 0;
+        background: #fff;
+    }
+
+    .cp-register-visual::before,
+    .cp-register-visual::after,
+    .cp-register-visual-content,
+    .cp-register-visual-footer {
         display: none;
     }
 
     .cp-register-form-side {
         box-sizing: border-box;
         align-items: flex-start;
-        min-height: 100vh;
-        padding: 30px 23px;
+        min-height: calc(100vh - 71px);
+        padding: 36px 23px 30px;
         background:
-            radial-gradient(circle at top right,
-                rgba(20, 184, 166, 0.08),
-                transparent 35%),
+            radial-gradient(circle at top right, rgba(20, 184, 166, 0.08), transparent 35%),
             #fff;
     }
 
@@ -467,22 +480,12 @@
         margin: 0 auto;
     }
 
-    .cp-register-mobile-brand {
-        display: inline-flex;
-        margin-bottom: 42px;
-        font-size: 21px;
-    }
-
     .cp-register-heading {
         margin-bottom: 28px;
     }
 
     .cp-register-heading h2 {
         font-size: 32px;
-    }
-
-    .cp-register-heading p {
-        font-size: 14px;
     }
 
     .cp-register-form {
@@ -499,9 +502,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .cp-register-field input,
     .cp-register-submit {
         transition: none;
+    }
+
+    .cp-register-submit:hover:not(:disabled) {
+        transform: none;
     }
 }

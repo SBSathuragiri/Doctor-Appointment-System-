@@ -125,14 +125,6 @@ export default function Login() {
 
             <section className="cp-login-form-side">
                 <div className="cp-login-card">
-                    <Link to="/" className="cp-brand cp-mobile-brand">
-                        <span className="cp-brand-symbol">
-                            <span>+</span>
-                        </span>
-                        <span>
-                            CARE <strong>POINT</strong>
-                        </span>
-                    </Link>
 
                     <div className="cp-form-heading">
                         <span className="cp-eyebrow">

@@ -1,0 +1,237 @@
+
+.admin-notifications {
+    padding: 28px;
+    color: #1e293b;
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.notifications-header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.notifications-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.mark-all-button,
+.mark-read-button {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #334155;
+    padding: 10px 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mark-all-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.notification-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.notification-summary-card {
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.notification-summary-card span {
+    display: block;
+    margin-bottom: 10px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.notification-summary-card strong {
+    font-size: 28px;
+}
+
+.notification-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.notification-toolbar h2 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.notification-toolbar select {
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #334155;
+}
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notification-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.notification-unread {
+    border-left: 4px solid #2563eb;
+    background: #f8fbff;
+}
+
+.notification-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.notification-icon-doctor {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.notification-icon-appointment {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.notification-icon-system {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.notification-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-title-row h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.notification-details > p {
+    margin: 8px 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.notification-details time {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.unread-badge {
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.mark-read-button {
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.mark-read-button:hover,
+.mark-all-button:hover:not(:disabled) {
+    background: #f1f5f9;
+}
+
+.notification-empty {
+    padding: 48px 20px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.notification-empty-icon {
+    color: #94a3b8;
+    font-size: 30px;
+}
+
+.notification-empty h3 {
+    margin: 12px 0 8px;
+}
+
+.notification-empty p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+    .admin-notifications {
+        padding: 16px;
+    }
+
+    .notifications-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .notification-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .notification-card {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .notification-details {
+        flex-basis: calc(100% - 60px);
+    }
+
+    .mark-read-button {
+        margin-left: 58px;
+    }
+
+    .notification-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

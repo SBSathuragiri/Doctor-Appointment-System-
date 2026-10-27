@@ -1,0 +1,358 @@
+.admin-dashboard {
+    width: 100%;
+}
+
+.admin-welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.admin-welcome h1 {
+    margin: 0 0 8px;
+    color: #172b4d;
+    font-size: 26px;
+    letter-spacing: -0.8px;
+}
+
+.admin-welcome p {
+    margin: 0;
+    color: #7b8798;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.admin-date {
+    padding: 10px 13px;
+    border: 1px solid #e3eaf1;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #52647a;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.admin-stat-card {
+    min-width: 0;
+    padding: 21px;
+    border: 1px solid #e7edf3;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(23, 43, 77, 0.025);
+}
+
+.admin-stat-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 20px;
+    border-radius: 11px;
+    font-size: 22px;
+}
+
+.admin-stat-icon.blue {
+    background: #e8f2ff;
+    color: #3979d6;
+}
+
+.admin-stat-icon.teal {
+    background: #e3f8f4;
+    color: #079889;
+}
+
+.admin-stat-icon.purple {
+    background: #f0eaff;
+    color: #8661d5;
+}
+
+.admin-stat-icon.orange {
+    background: #fff1df;
+    color: #db8a28;
+}
+
+.admin-stat-label {
+    margin: 0 0 8px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.admin-stat-card h2 {
+    margin: 0 0 8px;
+    color: #172b4d;
+    font-size: 29px;
+    letter-spacing: -0.8px;
+}
+
+.admin-stat-description {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 20px;
+}
+
+.admin-panel {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid #e7edf3;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.admin-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.admin-panel-heading h2 {
+    margin: 0 0 7px;
+    color: #172b4d;
+    font-size: 15px;
+}
+
+.admin-panel-heading p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.admin-panel-count {
+    padding: 6px 9px;
+    border-radius: 7px;
+    background: #fff4e5;
+    color: #b7791f;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.admin-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    padding: 24px 10px;
+    text-align: center;
+}
+
+.admin-empty-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 13px;
+    border-radius: 50%;
+    background: #e9f8f7;
+    color: #078f91;
+    font-size: 21px;
+}
+
+.admin-empty-state h3 {
+    margin: 0 0 8px;
+    color: #334155;
+    font-size: 13px;
+}
+
+.admin-empty-state p {
+    max-width: 280px;
+    margin: 0;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.admin-error {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid #fecaca;
+    border-radius: 9px;
+    background: #fef2f2;
+    color: #b91c1c;
+    font-size: 13px;
+}
+
+.admin-appointment-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.admin-appointment-summary>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 12px;
+    border-radius: 10px;
+    background: #f5f8fc;
+}
+
+.admin-appointment-summary span {
+    color: #718096;
+    font-size: 12px;
+}
+
+.admin-appointment-summary strong {
+    color: #172b4d;
+    font-size: 24px;
+}
+
+
+.admin-notice {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border: 1px solid #a7f3d0;
+    border-radius: 10px;
+    background: #ecfdf5;
+    color: #065f46;
+    font-size: 14px;
+}
+
+.admin-doctor-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.admin-doctor-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    padding: 18px;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.admin-doctor-info h3 {
+    margin: 0 0 8px;
+    color: #172b4d;
+}
+
+.admin-doctor-info p,
+.admin-doctor-actions p {
+    margin: 6px 0;
+    color: #64748b;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.admin-doctor-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.admin-doctor-actions button,
+.admin-error button {
+    padding: 9px 12px;
+    border: 1px solid #d5dde7;
+    border-radius: 8px;
+    background: #fff;
+    color: #24364b;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+}
+
+.admin-doctor-actions button:hover,
+.admin-error button:hover {
+    background: #f1f5f9;
+}
+
+.admin-doctor-actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.admin-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.admin-error {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+@media (max-width: 760px) {
+    .admin-doctor-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .admin-appointment-summary {
+        gap: 8px;
+    }
+
+    .admin-appointment-summary>div {
+        padding: 12px 8px;
+    }
+
+    .admin-appointment-summary strong {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-welcome {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-welcome h1 {
+        font-size: 23px;
+    }
+
+    .admin-stats-grid {
+        gap: 12px;
+    }
+
+    .admin-stat-card {
+        padding: 15px;
+    }
+
+    .admin-stat-card h2 {
+        font-size: 25px;
+    }
+
+    .admin-panel {
+        padding: 16px;
+    }
+}

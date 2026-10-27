@@ -20,6 +20,12 @@ import DoctorLayout from "./layouts/DoctorLayout";
 import DoctorAppointments from "./pages/doctor/DoctorAppointments";
 import DoctorAvailability from "./pages/doctor/DoctorsAvailability";
 import DoctorRegister from "./pages/auth/DoctorRegister";
+import AdminLayout from "./layouts/AdminLayout";
+import AdminDoctors from "./pages/admin/AdminDoctors";
+import AdminPatients from "./pages/admin/AdminPatients";
+import AdminAppointments from "./pages/admin/AdminAppointments";
+import AdminSettings from "./pages/admin/AdminSettings";
+import AdminNotifications from "./pages/admin/AdminNotifications";
 
 
 
@@ -56,9 +62,15 @@ function App() {
           </Route>
 
           <Route element={<RoleRoute allowedRole="admin" />}>
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route element={<AdminLayout />}>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/doctors" element={<AdminDoctors />} />
+              <Route path="/admin/patients" element={<AdminPatients />} />
+              <Route path="/admin/appointments" element={<AdminAppointments />} />
+              <Route path="/admin/settings" element={<AdminSettings />} />
+              <Route path="/admin/notifications" element={<AdminNotifications />} />
+            </Route>
           </Route>
-
         </Route>
 
         <Route path="*" element={<Navigate to="/login" replace />} />

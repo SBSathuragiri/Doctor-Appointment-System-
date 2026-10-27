@@ -1,0 +1,140 @@
+.admin-doctors-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-refresh-button,
+.admin-table-button,
+.admin-table-actions button {
+    padding: 9px 12px;
+    border: 1px solid #dbe3ec;
+    border-radius: 8px;
+    background: #fff;
+    color: #24364b;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-refresh-button:hover,
+.admin-table-button:hover,
+.admin-table-actions button:hover {
+    background: #f1f5f9;
+}
+
+.admin-doctors-summary {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px);
+}
+
+.admin-doctors-summary>div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.admin-doctors-summary span,
+.admin-doctor-email {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.admin-doctors-summary strong {
+    color: #172b4d;
+    font-size: 26px;
+}
+
+.admin-doctors-panel {
+    min-width: 0;
+}
+
+.admin-doctors-message {
+    padding: 24px 0;
+    color: #64748b;
+}
+
+.admin-doctors-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 16px;
+}
+
+.admin-doctors-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-doctors-table th,
+.admin-doctors-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e8edf3;
+    vertical-align: top;
+    font-size: 13px;
+}
+
+.admin-doctors-table th {
+    color: #64748b;
+    background: #f8fafc;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.admin-doctors-table td>strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #172b4d;
+}
+
+.admin-review-status {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.admin-review-status.is-approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.admin-review-status.is-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.admin-review-status.is-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.admin-table-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.admin-table-actions button:disabled,
+.admin-table-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+@media (max-width: 700px) {
+
+    .admin-doctors-table th,
+    .admin-doctors-table td {
+        padding: 10px 8px;
+    }
+}
