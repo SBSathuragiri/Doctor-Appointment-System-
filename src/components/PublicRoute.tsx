@@ -33,6 +33,9 @@ const PublicRoute = ({ children }: PublicRouteProps) => {
             try {
                 const response = await apiRequest("/auth/me");
 
+                console.log("PublicRoute /auth/me response:", response);
+                console.log("Current user role:", response.data?.role);
+
                 const authResponse = response as AuthResponse;
                 const role = authResponse.data.role;
 

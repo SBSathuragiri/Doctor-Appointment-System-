@@ -23,7 +23,7 @@ interface AdminNotification {
     status: NotificationStatus;
 }
 
-const API_URL = "http://localhost:5000/api/notifications";
+const API_URL = `${import.meta.env.VITE_API_URL}/notifications`;
 
 const mapNotification = (
     notification: ApiNotification
@@ -274,8 +274,8 @@ const AdminNotifications = () => {
                         <article
                             key={notification.id}
                             className={`notification-card ${notification.status === "unread"
-                                    ? "notification-unread"
-                                    : ""
+                                ? "notification-unread"
+                                : ""
                                 }`}
                         >
                             <div

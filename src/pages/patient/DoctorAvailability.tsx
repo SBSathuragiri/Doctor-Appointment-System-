@@ -81,17 +81,12 @@ export default function DoctorAvailability() {
                 ).toFixed(2)}.`
             );
 
-            const slotsResult = await apiRequest(
-                `/doctors/${doctorId}/slots?date=${encodeURIComponent(date)}`
-            );
+            const slotsResult = await apiRequest(`/doctors/${doctorId}/slots?date=${encodeURIComponent(date)}`);
 
             setSlots(slotsResult.data);
         } catch (err: unknown) {
             setBookingError(
-                err instanceof Error
-                    ? err.message
-                    : "Failed to book the appointment."
-            );
+                err instanceof Error ? err.message : "Failed to book the appointment.");
         } finally {
             setBookingSlotId(null);
         }
