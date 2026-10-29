@@ -26,7 +26,7 @@ import AdminPatients from "./pages/admin/AdminPatients";
 import AdminAppointments from "./pages/admin/AdminAppointments";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminNotifications from "./pages/admin/AdminNotifications";
-import PublicRoute from "./components/PublicRoute";
+// import PublicRoute from "./components/PublicRoute";
 
 
 
@@ -36,9 +36,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
 
-        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        {/* <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
         <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-        <Route path="/doctor-register" element={<PublicRoute><DoctorRegister /></PublicRoute>} />
+        <Route path="/doctor-register" element={<PublicRoute><DoctorRegister /></PublicRoute>} /> */}
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/doctor-register" element={<DoctorRegister />} />
 
         <Route element={<ProtectedRoute />}>
 
